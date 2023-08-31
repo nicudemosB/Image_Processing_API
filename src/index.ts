@@ -3,7 +3,7 @@ import routes from './routes/routes';
 import path from 'path';
 
 const app = express();
-// const port = 3000;
+const port = 3000;
 
 // middleware
 app.use(express.json());
@@ -23,8 +23,10 @@ app.get('/image', (req, res) => {
 //   console.log(`server started at http://localhost:${port}`);
   
 // });
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// const PORT = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
   
 });
+
+export default app; 
