@@ -1,15 +1,21 @@
 import express from 'express';
 import routes from './routes/routes';
+import path from 'path';
 
 const app = express();
 // const port = 3000;
 
+// middleware
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/api', routes); 
+app.use('/image-info', routes);
 
 // This is the route handler for the default home page
 app.get('/image', (req, res) => {
-  res.send('this is where your image will be');
+  res.sendFile(path.join(__dirname, 'public', 'encenadaport.jpg'));
 })
 
 // starting Express server 
