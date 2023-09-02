@@ -56,16 +56,16 @@ describe('Test endpoint response', function () {
         });
     }); });
 });
-// import sharp, { OutputInfo } from 'sharp';
-// describe('Sharp Module', () => {
-//   it('should resize an image', () => {
-//     const inputImage = 'path/to/input/image.jpg';
-//     const outputImage = 'path/to/output/image.jpg';
-//     sharp(inputImage)
-//     .resize(200, 200)
-//     .toFile(outputImage, (err: Error | null, info: OutputInfo) => {
-//       expect(err).toBeNull();
-//       expect(info).toBeDefined()
-//     })
-//   })
-// })
+var sharp_1 = __importDefault(require("sharp"));
+describe('Sharp Module', function () {
+    it('should resize an image', function () {
+        var inputImage = 'path/to/input/image.jpg';
+        var outputImage = 'path/to/output/image.jpg';
+        (0, sharp_1.default)(inputImage)
+            .resize(200, 200)
+            .toFile(outputImage, function (err, info) {
+            expect(err).toBeNull();
+            expect(info).toBeDefined();
+        });
+    });
+});

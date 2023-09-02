@@ -19,18 +19,18 @@ describe('Test endpoint response', () => {
 
 
 
-// import sharp, { OutputInfo } from 'sharp';
+import sharp, { OutputInfo } from 'sharp';
 
-// describe('Sharp Module', () => {
-//   it('should resize an image', () => {
-//     const inputImage = 'path/to/input/image.jpg';
-//     const outputImage = 'path/to/output/image.jpg';
+describe('Sharp Module', () => {
+  it('should resize an image', () => {
+    const inputImage = 'path/to/input/image.jpg';
+    const outputImage = 'path/to/output/image.jpg';
 
-//     sharp(inputImage)
-//     .resize(200, 200)
-//     .toFile(outputImage, (err: Error | null, info: OutputInfo) => {
-//       expect(err).toBeNull();
-//       expect(info).toBeDefined()
-//     })
-//   })
-// })
+    sharp(inputImage)
+    .resize(200, 200)
+    .toFile(outputImage, (err: Error | null, info: OutputInfo) => {
+      expect(err).toBeNull();
+      expect(info).toBeDefined()
+    })
+  })
+})
