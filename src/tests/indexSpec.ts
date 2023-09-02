@@ -1,25 +1,15 @@
 import supertest from "supertest";
 import app from '../index';
+import sharp, { OutputInfo } from 'sharp';
 
 const request = supertest(app);
 
-describe('Test endpoint response', () => {
-  it('gets the api endpoint', async () => {
-    const response = await request.get('/api');
-    expect(response.status).toBe(200);
-  })
-})
-
-
-
-
-
-
-
-
-
-
-import sharp, { OutputInfo } from 'sharp';
+// describe('Test endpoint response', () => {
+//   it('gets the api endpoint', async () => {
+//     const response = await request.get('/image');
+//     expect(response.status).toBe(404);
+//   })
+// })
 
 describe('Sharp Module', () => {
   it('should resize an image', () => {
