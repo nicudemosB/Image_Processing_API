@@ -1,26 +1,31 @@
-import supertest from "supertest";
+import supertest from 'supertest';
 import app from '../index';
-import sharp, { OutputInfo } from 'sharp';
+import sharp from 'sharp';
 
 const request = supertest(app);
 
-// describe('Test endpoint response', () => {
-//   it('gets the api endpoint', async () => {
-//     const response = await request.get('/image');
-//     expect(response.status).toBe(404);
-//   })
-// })
+describe('GET /image', () => {
+  it('should return a valid image', async () => {
+    const response = await request.get('/image');
+    // const inputImage = 'src/public/encenadaport.jpg';
+
+    expect(response.status).toBe(200);
+    // console.log('Content-Type', response.headers['content-type']);
+    expect(response.headers['content-type']).toMatch('text/html; charset=utf-8');
+  });
+});
 
 describe('Sharp Module', () => {
-  it('should resize an image', () => {
-    const inputImage = 'path/to/input/image.jpg';
-    const outputImage = 'path/to/output/image.jpg';
+  it('should resize an image', async () => {
+    const inputImage = 'src/public/encenadaport.jpg';
+    const outputImage = 'src/public/encenadaport_resized.jpg';
 
-    sharp(inputImage)
-    .resize(200, 200)
-    .toFile(outputImage, (err: Error | null, info: OutputInfo) => {
-      expect(err).toBeNull();
-      expect(info).toBeDefined()
-    })
-  })
-})
+    const info = await sharp(inputImage)
+      .resize(200, 200)
+      .toFile(outputImage);
+
+    expect(info).toBeDefined();
+    expect(info.width).toBe(200);
+    expect(info.height).toBe(200);
+      });
+  }); 

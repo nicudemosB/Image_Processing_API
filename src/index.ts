@@ -10,23 +10,22 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api', routes); 
+app.use('/api', routes);
 app.use('/image-info', routes);
 
 // This is the route handler for the default home page
 app.get('/image', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'encenadaport.jpg'));
-})
+});
 
-// starting Express server 
+// starting Express server
 // app.listen(port, () => {
 //   console.log(`server started at http://localhost:${port}`);
-  
+
 // });
 // const PORT = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-  
 });
 
-export default app; 
+export default app;

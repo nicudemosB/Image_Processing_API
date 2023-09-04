@@ -17,7 +17,7 @@ app.use('/image-info', routes_1.default);
 app.get('/image', function (req, res) {
     res.sendFile(path_1.default.join(__dirname, 'public', 'encenadaport.jpg'));
 });
-// starting Express server 
+// starting Express server
 // app.listen(port, () => {
 //   console.log(`server started at http://localhost:${port}`);
 // });

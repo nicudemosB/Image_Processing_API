@@ -43,12 +43,10 @@ exports.resizeImage = exports.processImage = exports.getImageInfo = void 0;
 var path_1 = __importDefault(require("path"));
 var sharp_1 = __importDefault(require("sharp"));
 //handles getting image info
-var getImageInfo = function (req, res) {
-};
+var getImageInfo = function (req, res) { };
 exports.getImageInfo = getImageInfo;
-// handles processing image 
-var processImage = function (req, res) {
-};
+// handles processing image
+var processImage = function (req, res) { };
 exports.processImage = processImage;
 var resizeImage = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var imagePath, outputImagePath, error_1;
